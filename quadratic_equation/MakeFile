@@ -1,0 +1,25 @@
+CC = gcc
+CFLAGS = -Wall - Wextra
+TARGER = quadratic_equation
+
+.PHONY: all clean check
+all: $(TARGET)
+
+$(TARGET): main.o
+quadratic_equation.o
+	$(CC) $(CFLAGS) -o &@ $^
+
+main.o: main.c
+quadratic_equation.h
+	$(CC) &(CFLAGS) -c $<
+
+quadratic_equation.o:
+quadratic_equation.c
+quadratic_equation.h
+	$(CC) $(CFLAGS) -c $<
+
+clean:
+	rm -f $(TARGET) *.o
+
+check: $(TARGET)
+	./$(TARGET)
